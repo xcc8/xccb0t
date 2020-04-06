@@ -44,7 +44,7 @@ bot.on('message', message=>{
         case 'mute':
         	var member = message.member;
             var person  = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
-            if(!person) return  message.reply("I CANT FIND THE USER " + person)
+            if(!person) return message.reply("I CANT FIND THE USER " + person)
  
             let mainrole = message.guild.roles.cache.find(role => role.name === "member");
             let role = message.guild.roles.cache.find(role => role.name === "mute");
