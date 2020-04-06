@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const ms = require('ms');
 
-const token = 'Njk1MjkyNzA5MzIxMDQ4MTY0.XoYL4A.60eUlrBEProOArcc0DSSNOdImA8';
 
 const PREFIX = '!';
 
@@ -46,7 +45,7 @@ bot.on('message', message=>{
             var person  = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
             if(!person) return  message.reply("I CANT FIND THE USER " + person)
  
-            let mainrole = message.guild.roles.cache.find(role => role.name === "player");
+            let mainrole = message.guild.roles.cache.find(role => role.name === "member");
             let role = message.guild.roles.cache.find(role => role.name === "mute");
             if(!member.roles.cache.some(role => role.name === 'Admin')) return message.reply("invalid perms, if you think that this is an error, pleas contact the server admins")
  
@@ -79,5 +78,5 @@ bot.on('message', message=>{
 	}
 })
 
-bot.login(token);
+bot.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
 
