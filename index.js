@@ -43,13 +43,14 @@ bot.on('message', message=>{
 		break;
         case 'mute':
         	var member = message.member;
+            if(!member.roles.cache.some(role => role.name === 'Admin')) return message.reply("invalid perms, if you think that this is an error, pleas contact the server admins")
+ 
             var person  = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
             if(!person) return  message.reply("I CANT FIND THE USER " + person)
  
             let mainrole = message.guild.roles.cache.find(role => role.name === "member");
             let role = message.guild.roles.cache.find(role => role.name === "mute");
-            if(!member.roles.cache.some(role => role.name === 'Admin')) return message.reply("invalid perms, if you think that this is an error, pleas contact the server admins")
- 
+    
             if(!role) return message.reply("Couldn't find the mute role.")
  
             let time = args[2];
