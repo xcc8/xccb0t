@@ -44,7 +44,7 @@ bot.on('message', message=>{
         case 'mute':
         	var member = message.member;
             if(!member.roles.cache.some(role => role.name === 'Admin')) return message.reply("invalid perms, if you think that this is an error, pleas contact the server admins")
- 
+			if(!args[1]) return message.reply('i need a second argument otherwise ill __**die**__')
             var person  = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
             if(!person) return message.reply("I CANT FIND THE USER " + person)
  
