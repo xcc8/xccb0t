@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const ms = require('ms');
 
+const token = 'Njk1MjkyNzA5MzIxMDQ4MTY0.XoYL4A.60eUlrBEProOArcc0DSSNOdImA8';
 
 const PREFIX = '!';
 
@@ -78,5 +79,5 @@ bot.on('message', message=>{
 	}
 })
 
-bot.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
+bot.login(token);
 
