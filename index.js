@@ -5,8 +5,8 @@ const ms = require('ms');
 const token = 'Njk1MjkyNzA5MzIxMDQ4MTY0.XoYL4A.60eUlrBEProOArcc0DSSNOdImA8';
 
 const PREFIX = '!';
-
-
+const randomPuppy = require('random-puppy');
+ 
 bot.on('ready', () =>{
 	console.log('online');
 })
@@ -75,6 +75,12 @@ bot.on('message', message=>{
  
  
    
+        break;
+        case 'puppy'
+			randomPuppy()
+    			.then(url => {
+        		message.channel.send(url);
+    		})
         break;
 
 	}
