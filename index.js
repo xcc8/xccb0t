@@ -76,12 +76,12 @@ bot.on('message', message=>{
  
    
         break;
-        case 'puppy'
-			randomPuppy()
-    			.then(url => {
-        		message.channel.send(url);
-    		})
-        break;
+//        case 'puppy'
+//			randomPuppy()
+//    			.then(url => {
+//        		message.channel.send(url);
+//    		})
+//        break;
 
 	}
 })
