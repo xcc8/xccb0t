@@ -62,7 +62,7 @@ bot.on('message', message=>{
             person.roles.add(role.id);
  
  
-            message.channel.send(`${person} has now been muted for ${ms(ms(time))}`)
+            message.channel.send(`${person} has now been muted for ${ms(ms(time))} so https://www.youtube.com/watch?v=OLpeX4RRo28`)
  
             setTimeout(function(){
                
