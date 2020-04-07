@@ -77,12 +77,12 @@ bot.on('message', message=>{
  
    
         break;
-        case 'puppy'
+/*        case 'puppy'
         // In this array, 
         // you can put the subreddits you want to grab memes from
-        var subReddits = ["dankmeme", "meme", "me_irl"];
+        const subReddits = ["dankmeme", "meme", "me_irl"];
         // Grab a random property from the array
-        var random = subReddits[Math.floor(Math.random() * subReddits.length)];
+        const random = subReddits[Math.floor(Math.random() * subReddits.length)];
 
         // Get a random image from the subreddit page
         const img = await randomPuppy(random);
@@ -95,7 +95,7 @@ bot.on('message', message=>{
         message.channel.send(embed);
     
         break;
-
+*/
 	}
 })
 
