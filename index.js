@@ -1,11 +1,12 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const ms = require('ms');
+const randomPuppy = require('random-puppy');
 
 const token = 'Njk1MjkyNzA5MzIxMDQ4MTY0.XoYL4A.60eUlrBEProOArcc0DSSNOdImA8';
 
 const PREFIX = '!';
-const randomPuppy = require('random-puppy');
+
  
 bot.on('ready', () =>{
 	console.log('online');
@@ -76,12 +77,24 @@ bot.on('message', message=>{
  
    
         break;
-//        case 'puppy'
-//			randomPuppy()
-//    			.then(url => {
-//        		message.channel.send(url);
-//    		})
-//        break;
+        case 'puppy'
+        // In this array, 
+        // you can put the subreddits you want to grab memes from
+        const subReddits = ["dankmeme", "meme", "me_irl"];
+        // Grab a random property from the array
+        const random = subReddits[Math.floor(Math.random() * subReddits.length)];
+
+        // Get a random image from the subreddit page
+        const img = await randomPuppy(random);
+        const embed = new RichEmbed()
+            .setColor("RANDOM")
+            .setImage(img)
+            .setTitle(`From /r/${random}`)
+            .setURL(`https://reddit.com/r/${random}`);
+
+        message.channel.send(embed);
+    
+        break;
 
 	}
 })
