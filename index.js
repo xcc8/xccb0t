@@ -34,6 +34,9 @@ bot.on('message', message=>{
 		case 'ping':
 			message.channel.send('pong!')
 		break;
+        case 'no':
+            message.channel.send('!no')
+        break;
 		case 'info':
 			message.channel.send('__xccb0t__ - v0.01 *beta*')
 		break;
