@@ -26,6 +26,7 @@ bot.on('message', async message=>{
 			.addField('Info command', '!info')
 			.addField('ping', '!ping')
 			.addField('message deleter command', '!massdelete <# of messages to delete>')
+            .addField('puts a picture of a cute cat', '!cat')
 			.addField('Mute command', '!mute <person to mute> <amount of time>')
 			.setColor(0x520821);
 			message.channel.send(embed);
@@ -86,9 +87,12 @@ bot.on('message', async message=>{
             //console.log(body.file)
             if(!{body}) return message.channel.send("i broke try again cuz me dum")
                 let cEmbed = new Discord.MessageEmbed()
+                .setTitle('here, have some pussy')
                 .setColor(0x520821)
                 .setImage(body.file);
             message.channel.send(cEmbed)
+
+            msg.delete();
 
         break;
 	}
