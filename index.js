@@ -82,7 +82,7 @@ bot.on('message', async message=>{
         break;
         case 'cat':
             let msg = await message.channel.send("generating...")
-            let {body} = await superagent
+            var {body} = await superagent
             .get('http://aws.random.cat/meow')
             //console.log(body.file)
             if(!{body}) return message.channel.send("i broke try again cuz me dum")
@@ -96,17 +96,16 @@ bot.on('message', async message=>{
 
         break;
         case 'meme':
-            let msgg = await message.channel.send("generating...")
-//            let {body} = await superagent
+ //           let msgg = await message.channel.send("generating...")
+            var {body} = await superagent
             .get('https://meme-api.herokuapp.com/gimme')
             if(!{body}) return message.channel.send("i broke try again cuz me dum")
                 let mEmbed = new Discord.MessageEmbed()
-                .setTitle('here, have some pussy')
+                .setTitle('here, have some memes')
                 .setColor(0x520821)
                 .setImage(body.url);
             message.channel.send(mEmbed)
-
-            msgg.delete();
+//            msgg.delete();
 
         break;
 	}
