@@ -27,6 +27,7 @@ bot.on('message', async message=>{
 			.addField('ping', '!ping')
 			.addField('message deleter command', '!massdelete <# of messages to delete>')
             .addField('puts a picture of a cute cat', '!cat')
+            .addField('meme command', '!meme')
 			.addField('Mute command', '!mute <person to mute> <amount of time>')
 			.setColor(0x520821);
 			message.channel.send(embed);
