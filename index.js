@@ -78,11 +78,11 @@ bot.on('message', message=>{
    
         break;
         case 'cat'
-            message = message.channel.send("generating...");
+            //message = message.channel.send("generating...");
 
-            {body} = superagent;
-            .get('http://aws.random.cat/meow')
-            console.log(body.file)
+            //{body} = superagent;
+            //.get('http://aws.random.cat/meow')
+            //console.log(body.file)
         break;
 	}
 })
