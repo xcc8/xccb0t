@@ -80,7 +80,7 @@ bot.on('message', message=>{
         case 'cat':
             let message = message.channel.send("generating...");
 
-            let {body} = superagent;
+            let {body} = superagent
             .get('http://aws.random.cat/meow')
             console.log(body.file)
         break;
