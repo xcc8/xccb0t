@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const ms = require('ms');
 const superagent = require("superagent")
+const fs = require('fs');
 
 const token = 'Njk1MjkyNzA5MzIxMDQ4MTY0.XoYL4A.60eUlrBEProOArcc0DSSNOdImA8';
 
@@ -78,11 +79,15 @@ bot.on('message', message=>{
    
         break;
         case 'cat':
-            let msg = message.channel.send("generating...")
-
             let {body} = superagent
             .get('http://aws.random.cat/meow')
-            console.log(body.file)
+            //console.log(body.file)
+            if(!{body}) return message.channel.send("i broke try again cuz me dum")
+                let cEmbed = new Discord.MessageEmbed()
+                .setColor(0x520821)
+                .setImage(body.file);
+            message.channel.send(cEmbed)
+
         break;
 	}
 })

@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.1.1",
+    "fs": "0.0.1-security",
     "ms": "^2.1.2",
     "random-puppy": "^1.1.0",
     "request": "2.81.0",
