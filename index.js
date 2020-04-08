@@ -83,12 +83,12 @@ bot.on('message', async message=>{
             let msg = await message.channel.send("generating...")
             let {body} = await superagent
             .get('http://aws.random.cat/meow')
-            console.log(body.file)
-            //if(!{body}) return message.channel.send("i broke try again cuz me dum")
-            //    let cEmbed = new Discord.MessageEmbed()
-            //    .setColor(0x520821)
-            //    .setImage(body.file);
-            //message.channel.send(cEmbed)
+            //console.log(body.file)
+            if(!{body}) return message.channel.send("i broke try again cuz me dum")
+                let cEmbed = new Discord.MessageEmbed()
+                .setColor(0x520821)
+                .setImage(body.file);
+            message.channel.send(cEmbed)
 
         break;
 	}
