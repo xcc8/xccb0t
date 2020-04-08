@@ -13,7 +13,7 @@ bot.on('ready', () =>{
 	console.log('online');
 })
 
-bot.on('message', message=>{
+bot.on('message', async message=>{
 	let args = message.content.substring(PREFIX.length).split(" ");
 	bot.user.setActivity('peeing in the shower');
 
@@ -80,8 +80,8 @@ bot.on('message', message=>{
    
         break;
         case 'cat':
-            let msg = message.channel.send("generating...")
-            let {body} = superagent
+            let msg = await message.channel.send("generating...")
+            let {body} = await superagent
             .get('http://aws.random.cat/meow')
             console.log(body.file)
             //if(!{body}) return message.channel.send("i broke try again cuz me dum")
