@@ -97,7 +97,7 @@ bot.on('message', async message=>{
         break;
         case 'meme':
             let msgg = await message.channel.send("generating...")
-            let {body} = await superagent
+//            let {body} = await superagent
             .get('https://meme-api.herokuapp.com/gimme')
             if(!{body}) return message.channel.send("i broke try again cuz me dum")
                 let mEmbed = new Discord.MessageEmbed()
