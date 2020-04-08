@@ -85,7 +85,7 @@ bot.on('message', message=>{
             if(!{body}) return message.channel.send("i broke try again cuz me dum")
                 let cEmbed = new Discord.MessageEmbed()
                 .setColor(0x520821)
-                .setImage(body.file);
+                .setImage(body);
             message.channel.send(cEmbed)
 
         break;
