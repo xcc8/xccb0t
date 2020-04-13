@@ -113,11 +113,11 @@ bot.on('message', async message=>{
 
           randomPuppy()
     .then(url => {
-        let pEmbed = new Discord.MessageEmbed()
-        .setTitle('puppy')
-        .setColor(0x520821)
-        .setImage(url);
-        message.channel.send(pEmbed)
+//        let pEmbed = new Discord.MessageEmbed()
+//        .setTitle('puppy')
+//        .setColor(0x520821)
+//        .setImage(url);
+        message.channel.send(url)
       //  console.log(url);
     })
     
