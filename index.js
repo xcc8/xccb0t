@@ -117,10 +117,9 @@ bot.on('message', async message=>{
 //        .setTitle('puppy')
 //        .setColor(0x520821)
 //        .setImage(url);
- //       message.channel.send(url)
+        message.channel.send(url)
       //  console.log(url);
     })
-    message.channel.send(url)
         break;
 
 	}
