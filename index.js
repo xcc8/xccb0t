@@ -109,7 +109,7 @@ bot.on('message', async message=>{
             msg.delete();
 
         break;
-        case 'puptest':
+/*        case 'puptest':
 
             var reddit = [
         "meme",
@@ -142,12 +142,13 @@ bot.on('message', async message=>{
     }).catch(err => console.error(err));
 
 
-/*            randomPuppy()
+          randomPuppy()
     .then(url => {
         console.log(url);
     })
-    */
+    
         break;
+*/
 	}
 })
 
