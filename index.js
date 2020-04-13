@@ -82,7 +82,7 @@ bot.on('message', async message=>{
    
         break;
         case 'cat':
-            let msg = await message.channel.send("generating...")
+            var msg = await message.channel.send("generating...")
             var {body} = await superagent
             .get('http://aws.random.cat/meow')
             //console.log(body.file)
@@ -97,7 +97,7 @@ bot.on('message', async message=>{
 
         break;
         case 'meme':
- //           let msgg = await message.channel.send("generating...")
+            var msg = await message.channel.send("generating...")
             var {body} = await superagent
             .get('https://meme-api.herokuapp.com/gimme')
             if(!{body}) return message.channel.send("i broke try again cuz me dum")
@@ -106,8 +106,47 @@ bot.on('message', async message=>{
                 .setColor(0x520821)
                 .setImage(body.url);
             message.channel.send(mEmbed)
-//            msgg.delete();
+            msg.delete();
 
+        break;
+        case 'puptest':
+
+            var reddit = [
+        "meme",
+        "animemes",
+        "MemesOfAnime",
+        "animememes",
+        "AnimeFunny",
+        "dankmemes",
+        "dankmeme",
+        "wholesomememes",
+        "MemeEconomy",
+        "techsupportanimals",
+        "meirl",
+        "me_irl",
+        "2meirl4meirl",
+        "AdviceAnimals"
+    ]
+
+    var subreddit = reddit[Math.floor(Math.random() * reddit.length)];
+
+    message.channel.startTyping();
+
+    randomPuppy(subreddit).then(async url => {
+            await message.channel.send({
+                files: [{
+                    attachment: url,
+                    name: 'meme.png'
+                }]
+            }).then(() => message.channel.stopTyping());
+    }).catch(err => console.error(err));
+
+
+/*            randomPuppy()
+    .then(url => {
+        console.log(url);
+    })
+    */
         break;
 	}
 })
