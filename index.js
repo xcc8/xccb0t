@@ -1,8 +1,9 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const ms = require('ms');
-const superagent = require("superagent")
+const superagent = require("superagent");
 const fs = require('fs');
+const randomPuppy = require('random-puppy');
 
 const token = 'Njk1MjkyNzA5MzIxMDQ4MTY0.XoYL4A.60eUlrBEProOArcc0DSSNOdImA8';
 
