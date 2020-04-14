@@ -114,18 +114,18 @@ bot.on('message', async message=>{
 
           randomPuppy()
     .then(url => {
-//        let pEmbed = new Discord.MessageEmbed()
-//        .setTitle('puppy')
-//        .setColor(0x520821)
-//        .setImage(url);
-        message.channel.send(url)
-      //  console.log(url);
+        var pEmbed = new Discord.MessageEmbed()
+        .setTitle('puppy')
+        .setColor(0x520821)
+        .setImage(url);
+        message.channel.send(pEmbed)
+        console.log(url);
     })
         break;
 
- //       case 'fixxcc':
-   //         let roley = message.guild.roles.cache.find(role => role.name === "xcc");
-    //        message.member.roles.add(roley);
+//        case 'fixxcc':
+//            let roley = message.guild.roles.cache.find(role => role.name === "xcc");
+//            message.member.roles.add(roley);
 	}
 })
 
