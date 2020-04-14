@@ -29,7 +29,7 @@ bot.on('message', async message=>{
             .addField('puts a picture of a cute cat', '!cat')
             .addField('meme command', '!meme')
 			.addField('Mute command', '!mute <person to mute> <amount of time>')
-            .addField('picture of puppy', '!puppy>')
+            .addField('picture of puppy', '!puppy')
 			.setColor(0x520821);
 			message.channel.send(embed);
 		break;
