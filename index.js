@@ -33,7 +33,7 @@ bot.on('message', async message=>{
             .addField('pic straight from mc subreddit', '!minecraft')
             .addField('get a random image from the subreddit of your choice', '!subreddit <subreddit>')
 			.setColor(0x520821)
-            .addField('dont include the <>');
+            .addField('dont include the <>', 'it will break me');
 			message.channel.send(embed);
 		break;
 		
