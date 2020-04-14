@@ -31,7 +31,9 @@ bot.on('message', async message=>{
 			.addField('Mute command', '!mute <person to mute> <amount of time>')
             .addField('picture of puppy', '!puppy')
             .addField('pic straight from mc subreddit', '!minecraft')
+            .addField('get a random image from the subreddit of your choice', '!subreddit <subreddit>')
 			.setColor(0x520821);
+            .addField('dont include the <>')
 			message.channel.send(embed);
 		break;
 		
