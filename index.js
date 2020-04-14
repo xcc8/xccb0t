@@ -122,6 +122,24 @@ bot.on('message', async message=>{
         console.log(url);
     })
         break;
+    
+        case 'minecraft':
+
+          randomPuppy('minecraft')
+    .then(url => {
+        var mcEmbed = new Discord.MessageEmbed()
+        .setTitle('puppy')
+        .setColor(0x520821)
+        .setImage(url);
+        message.channel.send(mcEmbed)
+        console.log(url);
+    })
+        break;
+
+
+
+
+
 
 //        case 'fixxcc':
 //            let roley = message.guild.roles.cache.find(role => role.name === "xcc");
