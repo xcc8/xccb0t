@@ -14,13 +14,14 @@ bot.once('ready', () =>{
 })
 
 bot.once('message', async message=>{
-	const args = message.content.slice(config.prefix.length).trim().split(' ');
+    const args = message.content.slice(config.prefix.length).trim().split(' ');
+    const cmd = args.shift().toLowerCase();
 	bot.user.setActivity('Stuff');
 
     ignores text that doesnt start with prefix
     if (message.content.indexOf(PREFIX) !== 0) return;
 
-	switch(args[1]){
+	switch(cmd){
 
 
 		case 'help':
