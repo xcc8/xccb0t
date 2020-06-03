@@ -19,7 +19,7 @@ bot.once('message', async message=>{
 	bot.user.setActivity('Stuff');
 
     ignores text that doesnt start with prefix
-    if (message.content.indexOf(PREFIX) !== 0) return;
+//    if (message.content.indexOf(PREFIX) !== 0) return;
 
 	switch(cmd){
 
