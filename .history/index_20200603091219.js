@@ -61,8 +61,8 @@ bot.on('message', async message=>{
             var person  = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
             if(!person) return message.reply("I CANT FIND THE USER " + person)
  
-            
-            let role = message.guild.roles.cache.find(role => role.name === "Muted");
+            let mainrole = message.guild.roles.cache.find(role => role.name === "member");
+            let role = message.guild.roles.cache.find(role => role.name === "mute");
     
             if(!role) return message.reply("Couldn't find the mute role.")
  
@@ -71,7 +71,7 @@ bot.on('message', async message=>{
                 return message.reply("You didnt specify a time!");
             }
  
-            
+            person.roles.remove(mainrole.id)
             person.roles.add(role.id);
  
  
@@ -79,7 +79,7 @@ bot.on('message', async message=>{
  
             setTimeout(function(){
                
-               
+                person.roles.add(mainrole.id)
                 person.roles.remove(role.id);
                 console.log(role.id)
                 message.channel.send(`${person} has been unmuted.`)

@@ -46,23 +46,23 @@ bot.on('message', async message=>{
 		break;
 
 		case 'info':
-			message.channel.send('Iron Nexus Bot- v0.01 *beta*')
+			message.channel.send('__xccb0t__ - v0.01 *beta*')
 		break;
 		case 'massdelete':
 			var member = message.member;
-			if(!member.roles.cache.some(role => role.name === 'Leader', 'Temporary Leader')) return message.reply("invalid perms, if you think that this is an error, pleas contact the server admins")
+			if(!member.roles.cache.some(role => role.name === 'Admin')) return message.reply("invalid perms, if you think that this is an error, pleas contact the server admins")
 			if(!args[1]) return message.reply('i need a second argument otherwise ill __**die**__')
 				message.channel.bulkDelete(args[1]);
 		break;
         case 'mute':
         	var member = message.member;
-            if(!member.roles.cache.some(role => role.name === 'Leader', 'Temporary Leader')) return message.reply("invalid perms, if you think that this is an error, pleas contact the server admins")
+            if(!member.roles.cache.some(role => role.name === 'Admin')) return message.reply("invalid perms, if you think that this is an error, pleas contact the server admins")
 			if(!args[1]) return message.reply('i need a second argument otherwise ill __**die**__')
             var person  = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
             if(!person) return message.reply("I CANT FIND THE USER " + person)
  
-            
-            let role = message.guild.roles.cache.find(role => role.name === "Muted");
+            let mainrole = message.guild.roles.cache.find(role => role.name === "member");
+            let role = message.guild.roles.cache.find(role => role.name === "mute");
     
             if(!role) return message.reply("Couldn't find the mute role.")
  
@@ -71,7 +71,7 @@ bot.on('message', async message=>{
                 return message.reply("You didnt specify a time!");
             }
  
-            
+            person.roles.remove(mainrole.id)
             person.roles.add(role.id);
  
  
@@ -79,7 +79,7 @@ bot.on('message', async message=>{
  
             setTimeout(function(){
                
-               
+                person.roles.add(mainrole.id)
                 person.roles.remove(role.id);
                 console.log(role.id)
                 message.channel.send(`${person} has been unmuted.`)
