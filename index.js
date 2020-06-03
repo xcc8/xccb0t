@@ -9,13 +9,16 @@ const randomPuppy = require('random-puppy');
 const PREFIX = '!';
 
  
-bot.on('ready', () =>{
+bot.once('ready', () =>{
 	console.log('online');
 })
 
-bot.on('message', async message=>{
+bot.once('message', async message=>{
 	let args = message.content.substring(PREFIX.length).split(" ");
-	bot.user.setActivity('peeing in the shower');
+	bot.user.setActivity('Stuff');
+
+    ignores text that doesnt start with prefix
+    if (message.content.indexOf(PREFIX) !== 0) return;
 
 	switch(args[0]){
 
