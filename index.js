@@ -14,7 +14,7 @@ bot.once('ready', () =>{
 })
 
 bot.once('message', async message=>{
-	let args = message.content.substring(PREFIX.length).split(" ");
+	const args = message.content.slice(config.prefix.length).trim().split(' ');
 	bot.user.setActivity('Stuff');
 
     ignores text that doesnt start with prefix
