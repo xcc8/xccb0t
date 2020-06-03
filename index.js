@@ -20,7 +20,7 @@ bot.once('message', async message=>{
     ignores text that doesnt start with prefix
     if (message.content.indexOf(PREFIX) !== 0) return;
 
-	switch(args[0]){
+	switch(args[1]){
 
 
 		case 'help':
