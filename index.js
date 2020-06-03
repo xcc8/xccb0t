@@ -13,7 +13,7 @@ bot.once('ready', () =>{
 	console.log('online');
 })
 
-bot.once('message', async message=>{
+bot.on('message', async message=>{
     const args = message.content.slice(config.prefix.length).trim().split(' ');
     const cmd = args.shift().toLowerCase();
 	bot.user.setActivity('Stuff');
